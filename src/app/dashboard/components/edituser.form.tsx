@@ -49,7 +49,10 @@ export const EditUserForm = ({ user }: { user: IUser }) => {
           Update Data User
         </Button>
         {state?.status === 200 && (
-          <p className="text-black">{state?.message}</p>
+          <p className="text-black text-center">
+            {state?.message}.<br />
+            Please check your terminal console.
+          </p>
         )}
       </form>
     </div>

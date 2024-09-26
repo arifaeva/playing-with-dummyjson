@@ -28,7 +28,11 @@ export default function UserForm() {
           Add New User
         </Button>
         {state?.status === 201 && (
-          <p className="text-black">{state?.message}</p>
+          <p className="text-black text-center">
+            {state?.message}.
+            <br />
+            Please check your terminal console.
+          </p>
         )}
       </form>
     </div>

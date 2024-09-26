@@ -24,7 +24,7 @@ export async function editUserAction(prevState: unknown, formData: FormData) {
   if (res.status === 200) {
     return {
       status: res.status,
-      message: "User data has been successfully updated",
+      message: "User data has been successfully updated.",
     };
   }
 }

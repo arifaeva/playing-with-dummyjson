@@ -16,38 +16,45 @@ export default function LoginPage() {
           <p>Sign in to get full access!</p>
         </div>
         <form action={formAction} className="flex flex-col gap-4">
-          <Input placeholder="username" name="username" type="text" required />
           <Input
-            placeholder="password"
+            placeholder="Username"
+            name="username"
+            type="text"
+            required
+            role="username"
+          />
+          <Input
+            placeholder="Password"
             name="password"
             type="password"
             required
+            role="password"
           />
-          <Button disabled={pending}>Sign in</Button>
+          <Button disabled={pending} role="login">
+            Sign in
+          </Button>
           {state?.status === "error" && (
-              <p className="text-rose-400">{state?.message}</p>
-            ) && (
-              <div
-                id="alert-1"
-                className="flex items-center p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-                role="alert"
+            <div
+              id="alert-1"
+              className="flex items-center p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+              role="alert"
+            >
+              <svg
+                className="flex-shrink-0 w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
               >
-                <svg
-                  className="flex-shrink-0 w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                </svg>
-                <span className="sr-only">Info</span>
-                <div className="ms-3 text-sm font-medium">
-                  {state?.message}. Your username or password is incorrect.
-                  Please try again.
-                </div>
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span className="sr-only">Info</span>
+              <div className="ms-3 text-sm font-medium">
+                {state?.message}. Your username or password is incorrect. Please
+                try again.
               </div>
-            )}
+            </div>
+          )}
         </form>
       </div>
     </div>
